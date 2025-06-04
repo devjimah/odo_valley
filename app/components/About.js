@@ -117,7 +117,7 @@ const About = () => {
               </p>
 
               <p className="text-lg text-slate-700 dark:text-slate-300 mb-8">
-                Whether you're looking for a relaxing beach retreat, an
+                Whether you&apos;re looking for a relaxing beach retreat, an
                 adventurous expedition, or a cultural immersion, we tailor each
                 journey to your preferences while maintaining our commitment to
                 responsible tourism.

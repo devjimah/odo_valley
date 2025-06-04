@@ -101,9 +101,11 @@ const Footer = () => {
                 Our Certifications
               </h4>
               <div className="flex space-x-4">
-                <img
+                <Image
                   src="/certified-travel.svg"
                   alt="Certified Travel"
+                  width={48}
+                  height={48}
                   className="h-12 w-auto"
                 />
               </div>
