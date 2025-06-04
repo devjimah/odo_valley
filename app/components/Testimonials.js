@@ -277,7 +277,7 @@ const Testimonials = () => {
 
           <p className="reveal-text max-w-3xl mx-auto text-lg text-slate-600 dark:text-slate-300 mb-10">
             Hear from travelers who have experienced our unique artistic
-            approach to exploring the world's most inspiring destinations.
+            approach to exploring the world&apos;s most inspiring destinations.
           </p>
         </div>
 
@@ -370,11 +370,11 @@ const Testimonials = () => {
                           {/* Testimonial text */}
                           <p className="text-xl md:text-2xl leading-relaxed text-slate-600 dark:text-slate-200 mb-8 italic relative">
                             <span className="absolute -top-2 -left-2 text-3xl text-slate-200 dark:text-slate-600">
-                              "
+                              &ldquo;
                             </span>
                             {testimonial.content}
                             <span className="absolute -bottom-5 -right-2 text-3xl text-slate-200 dark:text-slate-600">
-                              "
+                              &rdquo;
                             </span>
                           </p>
 
