@@ -492,7 +492,7 @@ const Hero = () => {
                   }}
                   transition={{ duration: 1, delay: 0.8 }}
                 >
-                  Nature's
+                  Nature&apos;s
                 </motion.span>
                 <motion.span
                   className="block bg-gradient-to-r from-green-400 via-emerald-300 to-teal-300 bg-clip-text text-transparent overflow-hidden"
@@ -515,7 +515,7 @@ const Hero = () => {
               className="text-lg sm:text-xl text-white/80 leading-relaxed font-light max-w-lg origin-left"
             >
               Discover sustainable agriculture, biodiversity conservation, and
-              farm-to-table excellence in Ghana's most beautiful valley
+              farm-to-table excellence in Ghana&apos;s most beautiful valley
               ecosystem.
             </motion.p>
 

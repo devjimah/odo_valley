@@ -72,7 +72,7 @@ const Biodiversity = () => {
           </h2>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Discover the rich ecosystem of Odo Valley, where traditional farming
-            meets modern conservation efforts to preserve Ghana's natural
+            meets modern conservation efforts to preserve Ghana&apos;s natural
             heritage.
           </p>
         </motion.div>

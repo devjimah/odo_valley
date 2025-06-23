@@ -176,9 +176,9 @@ const Contact = () => {
           </h2>
 
           <p className="reveal-text max-w-3xl mx-auto text-lg text-white/90 mb-10">
-            Ready to experience Ghana's natural beauty and cultural heritage?
-            Reach out to plan your sustainable eco-tourism adventure at Odo
-            Valley.
+            Ready to experience Ghana&apos;s natural beauty and cultural
+            heritage? Reach out to plan your sustainable eco-tourism adventure
+            at Odo Valley.
           </p>
         </div>
 
