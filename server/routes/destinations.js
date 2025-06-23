@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Destination = require("../models/Destination");
 const { protect, admin } = require("../middleware/auth");
-const upload = require("../middleware/upload");
+const { handleUpload } = require("../middleware/upload");
 const { validateDestination } = require("../utils/validation");
 
 // @route   GET /api/destinations
@@ -65,7 +65,7 @@ router.get("/:id", async (req, res) => {
 // @route   POST /api/destinations
 // @desc    Create new destination
 // @access  Private/Admin
-router.post("/", protect, admin, upload.single("image"), async (req, res) => {
+router.post("/", protect, admin, handleUpload, async (req, res) => {
   try {
     // Validate request data
     const validation = validateDestination(req.body);
@@ -131,7 +131,7 @@ router.post("/", protect, admin, upload.single("image"), async (req, res) => {
 // @route   PUT /api/destinations/:id
 // @desc    Update destination
 // @access  Private/Admin
-router.put("/:id", protect, admin, upload.single("image"), async (req, res) => {
+router.put("/:id", protect, admin, handleUpload, async (req, res) => {
   try {
     // Validate request data
     const validation = validateDestination(req.body);

@@ -39,4 +39,9 @@ const upload = multer({
   },
 });
 
-module.exports = upload;
+// Export the upload middleware
+module.exports = {
+  upload,
+  handleUpload: upload.single("image"), // For single image uploads
+  handleMultipleUpload: upload.array("images", 10), // For multiple images
+};

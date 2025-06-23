@@ -10,6 +10,7 @@ import {
   FiLogOut,
   FiMenu,
   FiX,
+  FiStar,
 } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -50,6 +51,7 @@ const Layout = ({ children }) => {
   // Navigation links
   const navLinks = [
     { href: "/dashboard", icon: <FiHome size={18} />, label: "Dashboard" },
+    { href: "/hero-cards", icon: <FiStar size={18} />, label: "Hero Cards" },
     { href: "/destinations", icon: <FiMap size={18} />, label: "Destinations" },
     { href: "/tours", icon: <FiBookOpen size={18} />, label: "Tours" },
     {

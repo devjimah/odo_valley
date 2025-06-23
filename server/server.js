@@ -8,6 +8,7 @@ const destinationRoutes = require("./routes/destinations");
 const tourRoutes = require("./routes/tours");
 const testimonialRoutes = require("./routes/testimonials");
 const galleryRoutes = require("./routes/gallery");
+const heroCardRoutes = require("./routes/heroCards");
 
 // Load environment variables
 dotenv.config();
@@ -29,6 +30,7 @@ app.use("/api/destinations", destinationRoutes);
 app.use("/api/tours", tourRoutes);
 app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/gallery", galleryRoutes);
+app.use("/api/hero-cards", heroCardRoutes);
 
 // Serve admin panel in production
 if (process.env.NODE_ENV === "production") {

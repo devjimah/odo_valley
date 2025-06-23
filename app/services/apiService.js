@@ -152,6 +152,26 @@ const apiService = {
   },
 
   /**
+   * Get hero cards for carousel
+   * @param {Object} params - Query parameters
+   * @returns {Promise<Array>} List of hero cards
+   */
+  async getHeroCards(params = {}) {
+    try {
+      const response = await api.get("/hero-cards", { params });
+
+      if (!response.data.success) {
+        throw new Error(response.data.message || "Failed to fetch hero cards");
+      }
+
+      return response.data.data;
+    } catch (error) {
+      console.error("Error fetching hero cards:", error);
+      throw error;
+    }
+  },
+
+  /**
    * Submit contact form
    * @param {Object} data - Form data
    * @returns {Promise<Object>} Response data

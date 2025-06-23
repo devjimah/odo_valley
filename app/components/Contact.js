@@ -107,7 +107,7 @@ const Contact = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-24 relative overflow-hidden bg-white dark:bg-slate-900"
+      className="py-24 relative overflow-hidden"
       id="contact"
     >
       {/* Decorative background elements */}
@@ -116,7 +116,7 @@ const Contact = () => {
         className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden"
       >
         <motion.div
-          className="shape absolute top-40 -right-64 w-[30rem] h-[30rem] rounded-full bg-blue-50 dark:bg-blue-900/10 blur-3xl opacity-50"
+          className="shape absolute top-40 -right-64 w-[30rem] h-[30rem] rounded-full bg-green-50 dark:bg-green-900/10 blur-3xl opacity-50"
           style={{
             transform: `translate(${mousePosition.x * 20}px, ${
               mousePosition.y * 20
@@ -124,7 +124,7 @@ const Contact = () => {
           }}
         ></motion.div>
         <motion.div
-          className="shape absolute -bottom-80 -left-40 w-[40rem] h-[40rem] rounded-full bg-purple-50 dark:bg-purple-900/10 blur-3xl opacity-50"
+          className="shape absolute -bottom-80 -left-40 w-[40rem] h-[40rem] rounded-full bg-emerald-50 dark:bg-emerald-900/10 blur-3xl opacity-50"
           style={{
             transform: `translate(${mousePosition.x * -20}px, ${
               mousePosition.y * -20
@@ -133,7 +133,7 @@ const Contact = () => {
         ></motion.div>
 
         <svg
-          className="shape absolute top-20 left-20 w-40 h-40 text-blue-500/5 dark:text-blue-400/5"
+          className="shape absolute top-20 left-20 w-40 h-40 text-green-500/5 dark:text-green-400/5"
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -145,7 +145,7 @@ const Contact = () => {
         </svg>
 
         <svg
-          className="shape absolute bottom-40 right-20 w-32 h-32 text-purple-500/5 dark:text-purple-400/5"
+          className="shape absolute bottom-40 right-20 w-32 h-32 text-emerald-500/5 dark:text-emerald-400/5"
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -160,25 +160,25 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={titleRef} className="text-center mb-16">
           {/* Artistic section title */}
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 backdrop-blur-sm mb-4">
-            <div className="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400 mr-2"></div>
-            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gradient-to-r from-green-500/10 to-emerald-500/10 dark:from-green-500/20 dark:to-emerald-500/20 backdrop-blur-sm mb-4">
+            <div className="w-2.5 h-2.5 rounded-full bg-green-600 dark:bg-green-400 mr-2"></div>
+            <span className="text-sm font-medium text-green-700 dark:text-green-300">
               Get in Touch
             </span>
           </div>
 
           <h2 className="relative text-4xl sm:text-5xl font-bold mb-5 overflow-hidden inline-block">
-            <span className="reveal-text block">Begin Your</span>
-            <span className="reveal-text block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-blue-400">
-              Artistic Journey
+            <span className="reveal-text block">Connect with</span>
+            <span className="reveal-text block text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-emerald-500 to-green-400">
+              Odo Valley
             </span>
             <div className="absolute -bottom-3 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
           </h2>
 
-          <p className="reveal-text max-w-3xl mx-auto text-lg text-slate-600 dark:text-slate-300 mb-10">
-            Reach out to our travel artisans to craft your next unforgettable
-            experience. We&apos;re here to design a journey that reflects your
-            unique artistic vision.
+          <p className="reveal-text max-w-3xl mx-auto text-lg text-white/90 mb-10">
+            Ready to experience Ghana's natural beauty and cultural heritage?
+            Reach out to plan your sustainable eco-tourism adventure at Odo
+            Valley.
           </p>
         </div>
 
@@ -190,17 +190,17 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="p-6 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg relative overflow-hidden group"
+              className="p-6 bg-white rounded-2xl shadow-lg relative overflow-hidden group"
             >
               {/* Decorative corner */}
               <div className="absolute top-0 right-0 w-16 h-16">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-blue-500 to-blue-500/0 opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-green-500 to-green-500/0 opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
               </div>
 
               <div className="flex items-start">
-                <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0 mr-4">
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mr-4">
                   <svg
-                    className="w-6 h-6 text-blue-600 dark:text-blue-400"
+                    className="w-6 h-6 text-green-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -214,12 +214,10 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-1">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
                     Contact Phone
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    +1 (555) 123-4567
-                  </p>
+                  <p className="text-gray-600">+233 (0) 24 123-4567</p>
                 </div>
               </div>
             </motion.div>
@@ -229,17 +227,17 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="p-6 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg relative overflow-hidden group"
+              className="p-6 bg-white rounded-2xl shadow-lg relative overflow-hidden group"
             >
               {/* Decorative corner */}
               <div className="absolute top-0 right-0 w-16 h-16">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-500 to-purple-500/0 opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-green-500 to-green-500/0 opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
               </div>
 
               <div className="flex items-start">
-                <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0 mr-4">
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mr-4">
                   <svg
-                    className="w-6 h-6 text-purple-600 dark:text-purple-400"
+                    className="w-6 h-6 text-green-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -253,12 +251,10 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-1">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
                     Email Address
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    hello@artistictravels.com
-                  </p>
+                  <p className="text-gray-600">info@odovalley.com</p>
                 </div>
               </div>
             </motion.div>
@@ -268,17 +264,17 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="p-6 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg relative overflow-hidden group"
+              className="p-6 bg-white rounded-2xl shadow-lg relative overflow-hidden group"
             >
               {/* Decorative corner */}
               <div className="absolute top-0 right-0 w-16 h-16">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-teal-500 to-teal-500/0 opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-green-500 to-green-500/0 opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
               </div>
 
               <div className="flex items-start">
-                <div className="w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center flex-shrink-0 mr-4">
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mr-4">
                   <svg
-                    className="w-6 h-6 text-teal-600 dark:text-teal-400"
+                    className="w-6 h-6 text-green-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -298,15 +294,11 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-1">
-                    Office Location
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    Location
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    123 Creativity Avenue, Artisan District
-                  </p>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    New York, NY 10001
-                  </p>
+                  <p className="text-gray-600">Odo Valley Eco-Tourism Center</p>
+                  <p className="text-gray-600">Eastern Region, Ghana</p>
                 </div>
               </div>
             </motion.div>
@@ -336,7 +328,7 @@ const Contact = () => {
                   href="#"
                   whileHover={{ y: -3, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-slate-800 shadow-md"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-green-600/20 backdrop-blur-md border border-green-400/30 shadow-md"
                 >
                   <svg
                     className="w-5 h-5"
@@ -354,69 +346,70 @@ const Contact = () => {
           {/* Contact form side */}
           <div
             ref={formRef}
-            className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-md p-8 md:p-10 rounded-2xl shadow-xl border border-white/20 dark:border-slate-700/30 relative"
+            className="bg-white p-8 md:p-10 rounded-2xl shadow-xl relative"
           >
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-green-400/10 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-emerald-400/10 rounded-full blur-3xl"></div>
 
             <form className="space-y-6 relative z-10">
               <div className="form-element">
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
                   Your Name
                 </label>
                 <div className="relative">
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white/50 dark:bg-slate-700/50 backdrop-blur-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 text-slate-800 dark:text-white transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900 transition-colors duration-200"
                     placeholder="Enter your name"
                   />
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none opacity-70"></div>
                 </div>
               </div>
 
               <div className="form-element">
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
                   Email Address
                 </label>
                 <div className="relative">
                   <input
                     type="email"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white/50 dark:bg-slate-700/50 backdrop-blur-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 text-slate-800 dark:text-white transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900 transition-colors duration-200"
                     placeholder="Enter your email"
                   />
                 </div>
               </div>
 
               <div className="form-element">
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
                   Subject
                 </label>
                 <div className="relative">
                   <select
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white/50 dark:bg-slate-700/50 backdrop-blur-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 text-slate-800 dark:text-white transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900 transition-colors duration-200"
                     defaultValue=""
                   >
                     <option value="" disabled>
                       Select a subject
                     </option>
                     <option value="general">General Inquiry</option>
-                    <option value="booking">Booking Information</option>
-                    <option value="custom">Custom Travel Plans</option>
+                    <option value="booking">Accommodation Booking</option>
+                    <option value="restaurant">Restaurant Reservation</option>
+                    <option value="farm-tour">Farm Tour Booking</option>
+                    <option value="events">Events & Workshops</option>
                     <option value="feedback">Feedback</option>
                   </select>
                 </div>
               </div>
 
               <div className="form-element">
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
                   Your Message
                 </label>
                 <div className="relative">
                   <textarea
                     rows="4"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white/50 dark:bg-slate-700/50 backdrop-blur-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 text-slate-800 dark:text-white transition-colors duration-200"
-                    placeholder="Tell us about your dream artistic journey..."
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900 transition-colors duration-200"
+                    placeholder="Tell us about your visit to Odo Valley..."
                   ></textarea>
                 </div>
               </div>
@@ -425,14 +418,14 @@ const Contact = () => {
                 <motion.button
                   whileHover={{
                     scale: 1.02,
-                    boxShadow: "0 20px 25px -5px rgba(59, 130, 246, 0.25)",
+                    boxShadow: "0 20px 25px -5px rgba(34, 197, 94, 0.25)",
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full relative overflow-hidden px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium shadow-lg group"
+                  className="w-full relative overflow-hidden px-6 py-3.5 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 text-white font-medium shadow-lg group"
                 >
                   <span className="relative z-10">Send Message</span>
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-600 z-0"
+                    className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-600 z-0"
                     initial={{ x: "-100%" }}
                     whileHover={{ x: 0 }}
                     transition={{ duration: 0.4 }}

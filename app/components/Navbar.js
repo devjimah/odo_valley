@@ -6,13 +6,20 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const { scrollY } = useScroll();
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   useMotionValueEvent(scrollY, "change", (latest) => {
+    if (!isMounted) return;
     const previous = scrollY.getPrevious();
     if (latest > previous && latest > 150 && !mobileMenuOpen) {
       setHidden(true);
@@ -23,6 +30,8 @@ const Navbar = () => {
 
   // Close mobile menu when window is resized to desktop size
   useEffect(() => {
+    if (!isMounted) return;
+
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setMobileMenuOpen(false);
@@ -31,7 +40,7 @@ const Navbar = () => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [isMounted]);
 
   const navVariants = {
     visible: {
@@ -46,56 +55,23 @@ const Navbar = () => {
     },
   };
 
-  const linkVariants = {
-    hover: {
-      scale: 1.05,
-      transition: { duration: 0.2 },
-    },
-  };
-
-  const mobileMenuVariants = {
-    closed: {
-      opacity: 0,
-      x: "100%",
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-        when: "afterChildren",
-        staggerChildren: 0.1,
-        staggerDirection: -1,
-      },
-    },
-    open: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-        when: "beforeChildren",
-        staggerChildren: 0.1,
-        staggerDirection: 1,
-      },
-    },
-  };
-
-  const menuItemVariants = {
-    closed: {
-      opacity: 0,
-      x: 20,
-    },
-    open: {
-      opacity: 1,
-      x: 0,
-    },
-  };
-
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Destinations", href: "#services" },
-    { name: "Tours", href: "#tours" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    {
+      name: "Biodiversity",
+      href: "#farm",
+    },
+    {
+      name: "Bookings & Restaurant",
+      href: "#residency",
+    },
+    {
+      name: "Store & Events",
+      href: "#store",
+    },
+    {
+      name: "Contact",
+      href: "#contact",
+    },
   ];
 
   const toggleMenu = () => {
@@ -110,23 +86,37 @@ const Navbar = () => {
     <motion.header
       variants={navVariants}
       animate={hidden ? "hidden" : "visible"}
-      className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white dark:bg-gray-900 shadow-md"
+      className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Logo */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500"
+          className="flex items-center space-x-2"
         >
-          Odo Travels
+          <Link
+            href="/"
+            className="flex items-center space-x-2"
+            onClick={handleLinkClick}
+          >
+            <Image
+              src="/assets/images/logo.jpg"
+              alt="Odo Valley Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            <span className="text-xl font-bold text-gray-900">Odo Valley</span>
+          </Link>
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:block">
-          <ul className="flex gap-8">
+        <nav className="hidden lg:block">
+          <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full p-1 border border-white/20">
             {navLinks.map((item, index) => (
-              <motion.li
+              <motion.div
                 key={item.name}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -134,31 +124,53 @@ const Navbar = () => {
               >
                 <Link href={item.href}>
                   <motion.div
-                    variants={linkVariants}
-                    whileHover="hover"
-                    className="cursor-pointer font-medium"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-4 py-2 rounded-full text-sm font-medium text-white hover:text-white hover:bg-green-500/80 hover:backdrop-blur-sm transition-all duration-200 cursor-pointer"
                   >
                     {item.name}
                   </motion.div>
                 </Link>
-              </motion.li>
+              </motion.div>
             ))}
-          </ul>
+          </div>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-gray-800 dark:text-white focus:outline-none"
-            aria-label="Toggle mobile menu"
+        {/* Right Side - Sign In/Sign Up */}
+        <div className="hidden lg:flex items-center space-x-3">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
           >
-            <svg
+            Sign In
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-full hover:bg-green-700 transition-colors"
+          >
+            Book Stay
+          </motion.button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
+          <motion.button
+            onClick={toggleMenu}
+            className="p-2 text-gray-700 hover:text-gray-900 transition-colors"
+            aria-label="Toggle mobile menu"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.svg
               className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
+              animate={mobileMenuOpen ? { rotate: 180 } : { rotate: 0 }}
+              transition={{ duration: 0.3 }}
             >
               {mobileMenuOpen ? (
                 <path
@@ -175,8 +187,8 @@ const Navbar = () => {
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               )}
-            </svg>
-          </button>
+            </motion.svg>
+          </motion.button>
         </div>
       </div>
 
@@ -189,32 +201,44 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 z-40 md:hidden"
+              className="fixed inset-0 bg-black/20 z-40 lg:hidden"
               onClick={() => setMobileMenuOpen(false)}
             />
 
             {/* Mobile menu panel */}
             <motion.div
-              variants={mobileMenuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="fixed top-[72px] right-0 bottom-0 w-3/4 max-w-sm bg-white dark:bg-gray-900 z-50 shadow-xl flex flex-col md:hidden"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-full left-0 right-0 bg-white/10 backdrop-blur-md shadow-lg border border-white/20 z-50 lg:hidden"
             >
-              <nav className="flex flex-col p-4">
-                <ul className="flex flex-col space-y-4">
-                  {navLinks.map((item) => (
-                    <motion.li key={item.name} variants={menuItemVariants}>
+              <nav className="p-6">
+                <ul className="space-y-4">
+                  {navLinks.map((item, index) => (
+                    <motion.li
+                      key={item.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
                       <Link
                         href={item.href}
                         onClick={handleLinkClick}
-                        className="block py-2 px-4 text-lg font-medium text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
+                        className="block py-3 px-4 text-white hover:text-white hover:bg-green-500/80 hover:backdrop-blur-sm rounded-lg transition-all duration-200 font-medium"
                       >
                         {item.name}
                       </Link>
                     </motion.li>
                   ))}
                 </ul>
+
+                {/* Mobile auth buttons */}
+                <div className="mt-6 pt-6 border-t border-white/20 space-y-3">
+                  <button className="w-full py-3 px-4 bg-green-600/80 backdrop-blur-sm text-white rounded-lg hover:bg-green-700/80 transition-all duration-200 font-medium">
+                    Book Stay
+                  </button>
+                </div>
               </nav>
             </motion.div>
           </>
